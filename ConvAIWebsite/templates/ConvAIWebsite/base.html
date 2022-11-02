@@ -84,14 +84,13 @@
 
         /* Adjust to screen size */
         body {
-            min-height: 100vh
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
         }
 
-        /* Defining border for content page containers */
-        .border {
-            border-style: dashed;
-            width: 100%;
-            height: 100%;
+        footer {
+            margin-top: auto;
         }
 
         /* TODO make footer have a fixed size even when a page is mostly empty*/
@@ -125,7 +124,7 @@
     <!-- Allows Inheritance for the rest of the templates!! -->
     {% block content %}{% endblock %}
 
-    <nav class="navbar fixed-bottom" style="margin-top: 30px;">
+    <footer class="navbar fixed-bottom">
 
         <!-- Footer separation lines -->
         <hr class="hr1">
@@ -155,7 +154,7 @@
                 </div>
             </div>
         </div>
-    </nav>
+    </footer>
 </body>
 
 </html>
