@@ -21,8 +21,8 @@
             margin-right: auto;
         }
 
-        /* Align navigation bar elements to the center of the screen */
-        ul {
+        /* Align navigation bar elements to the center of the screen - set background colour */
+        .ul1 {
             list-style-type: none;
             margin: 0;
             padding: 0;
@@ -59,6 +59,7 @@
         }
 
         /* Hover over footer links - green colour */
+        /* Use <a> tag and then a <span> tag to trigger green colour on hover */
         a:hover span {
             text-decoration: underline;
             color: forestgreen!important;
@@ -89,11 +90,19 @@
             flex-direction: column;
         }
 
+        /* Footer now stays at the bottom of the page in empty content pages as well */
         footer {
             margin-top: auto;
+            margin-bottom: 0;
+            bottom: 0;
+            background-color: #F1F1F1;
         }
 
-        /* TODO make footer have a fixed size even when a page is mostly empty*/
+        /* Adding bottom margin to the container - makes footer (and content) visually better */
+        .container {
+            margin-bottom: 20px;
+        }
+
     </style>
 
 </head>
@@ -110,7 +119,7 @@
 
     <!-- Navigation elements - the hrefs need to be filled here! -->
     <nav class="navbar navbar-expand navbar-dark sticky-top py-0">
-        <ul>
+        <ul class="ul1">
             <li class="li1"><a href="/">HOMEPAGE</a></li>
             <li class="li1"><a href="/research_objectives">RESEARCH OBJECTIVES</a></li>
             <li class="li1"><a href="/research_approach">RESEARCH APPROACH</a></li>
@@ -124,7 +133,8 @@
     <!-- Allows Inheritance for the rest of the templates!! -->
     {% block content %}{% endblock %}
 
-    <footer class="navbar fixed-bottom">
+    <!-- Inline style added to deal with a white strip at the end of the page -->
+    <footer class="navbar fixed-bottom" style="margin-bottom: 0px;">
 
         <!-- Footer separation lines -->
         <hr class="hr1">
