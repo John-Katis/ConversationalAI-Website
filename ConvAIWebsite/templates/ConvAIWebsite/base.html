@@ -1,0 +1,161 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <title>Conversational AI</title>
+
+    <!-- Bootstrap import for content pages - allows rows and columns of containers -->
+    <!-- Further imports for the content pages may be done here  -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <meta charset="UTF-8">
+
+    <style>
+
+        /* Centering the top image */
+        .center {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Align navigation bar elements to the center of the screen */
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #F1F1F1;
+            text-align: center;
+        }
+
+        /* Making the elements of the navigation bar items' list show up horizontally */
+        /* Creating classes li1-li2 means that <li> elements can be used without formatting in the content pages */
+        .li1 {
+            display: inline-block;
+            *display: inline;
+        }
+
+        /* Formatting the text of the list elements in the navigation bar */
+        .li1 a {
+            display: block;
+            color: black;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        /* Hover over navigation bar items colour */
+        .li1 a:hover {
+            background-color: #D3D3D3;
+        }
+
+        /* Formatting the Links items - otherwise they apper like links (purple and underlined) */
+        .li2 a {
+            color: black;
+            text-decoration: none;
+        }
+
+        /* Hover over footer links - green colour */
+        a:hover span {
+            text-decoration: underline;
+            color: forestgreen!important;
+        }
+
+        /* Formatting separation lines for the footer*/
+        .hr1 {
+            position: relative;
+            border: none;
+            height: 4px;
+            background: darkgreen;
+            margin-top: 10px;
+            margin-bottom: 5px;
+        }
+
+        .hr2 {
+            position: relative;
+            border: none;
+            height: 2px;
+            background: green;
+            margin-top: 5px;
+        }
+
+        /* Adjust to screen size */
+        body {
+            min-height: 100vh
+        }
+
+        /* Defining border for content page containers */
+        .border {
+            border-style: dashed;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* TODO make footer have a fixed size even when a page is mostly empty*/
+    </style>
+
+</head>
+
+
+<body>
+
+    <!-- Top image -->
+    <img src="{% static 'images/HSG_logo_claim.png' %}" alt="My image" class="center"
+         width="416"
+         height="76"
+         style="margin-top: 20px; margin-bottom: 10px;"
+    >
+
+    <!-- Navigation elements - the hrefs need to be filled here! -->
+    <nav class="navbar navbar-expand navbar-dark sticky-top py-0">
+        <ul>
+            <li class="li1"><a href="/">HOMEPAGE</a></li>
+            <li class="li1"><a href="/research_objectives">RESEARCH OBJECTIVES</a></li>
+            <li class="li1"><a href="/research_approach">RESEARCH APPROACH</a></li>
+            <li class="li1"><a href="/learning_design">LEARNING DESIGN</a></li>
+            <li class="li1"><a href="/results">RESULTS</a></li>
+            <li class="li1"><a href="/project_team">PROJECT TEAM</a></li>
+        </ul>
+    </nav>
+
+
+    <!-- Allows Inheritance for the rest of the templates!! -->
+    {% block content %}{% endblock %}
+
+    <nav class="navbar fixed-bottom" style="margin-top: 30px;">
+
+        <!-- Footer separation lines -->
+        <hr class="hr1">
+        <hr class="hr2">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4">
+                    Links:<br>
+                    <!-- li2 class added for CSS customized contents for the list -->
+                    <li class="li2">
+                        <a href="https://ics.unisg.ch/">
+                            <!-- Span added for CSS customized underlining of the text -->
+                            <span>Institute for Computer Science (ICS), University of St. Gallen</span>
+                        </a>
+                    </li>
+                </div>
+                <div class="col-sm-4">
+                    © Copyright 2022 University of St.Gallen Switzerland <mark>... add copyright ...</mark>
+                </div>
+                <div class="col-sm-4">
+                    Institute for Computer Science (ICS), University of St. Gallen
+                    <br>
+                    Rosenbergstrasse 30
+                    <br>
+                    9000, St. Gallen
+                </div>
+            </div>
+        </div>
+    </nav>
+</body>
+
+</html>
